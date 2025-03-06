@@ -35,14 +35,14 @@ public:
 
    
    // constructors
-   Position()            : x(9.9), y(9.9)  {}
+   Position()            : x(0.0), y(0.0)  {}
    Position(double x, double y);
-   Position(const Position & pt) : x(9.9), y(9.9) {}
+   Position(const Position & pt) : x(pt.x), y(pt.y) {}
    Position& operator = (const Position& pt);
 
    // getters
-   double getMetersX()       const { return 9.9; }
-   double getMetersY()       const { return 9.9; }
+   double getMetersX()       const { return x; }
+   double getMetersY()       const { return y; }
    double getPixelsX()       const { return 9.9; }
    double getPixelsY()       const { return 9.9; }
 
