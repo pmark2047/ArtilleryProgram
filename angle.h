@@ -52,10 +52,10 @@ public:
    //    | /
    // dy = cos a
    // dx = sin a
-   double getDx() const { return 9.9; }
-   double getDy() const { return 9.9; }
-   bool   isRight()          const { return true; }
-   bool   isLeft()           const { return true; }
+   double getDx()            const { return sin(radians); }
+   double getDy()            const { return cos(radians); }
+   bool   isRight()          const { return radians >= 0 && radians <= M_PI; }
+   bool   isLeft()           const { return radians > M_PI && radians < M_PI * 2; }
 
 
    // Setters
@@ -77,7 +77,7 @@ public:
    //     | a /
    //     |  /
    //     | /
-   void setDxDy(double dx, double dy)  { }
+   void setDxDy(double dx, double dy)  { radians =     normalize(atan2(dx, dy)); }
    Angle operator+(double degrees) const { return Angle(); }
 
 private:
