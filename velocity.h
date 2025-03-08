@@ -49,8 +49,8 @@ public:
    void addDX(double dx) { this->dx += dx; }
    void addDY(double dy) { this->dy += dy; }
    void add(const Acceleration & acceleration, double time);
-   void add(const Velocity & rhs) { }
-   void reverse() { }
+   void add(const Velocity & rhs) { this->dx += (rhs.getDX()); this->dy += (rhs.getDY()); }
+   void reverse() { this->dx = -this->dx; this->dy = -this->dy; }
 
 private:
    double dx;           // horizontal velocity
